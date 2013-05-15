@@ -1,4 +1,4 @@
 zapodot.github.io
 =================
 
-Pages for zapodot
+Pages for [zapodot](http://zapodot.org)

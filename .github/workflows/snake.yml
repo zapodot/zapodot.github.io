@@ -12,16 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checks out repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # ratchet:actions/checkout@v6
       - name: Generates snake animation for ${{ github.repository_owner }}
-        uses: miccy/snake-evolution@v1.2.4
+        uses: miccy/snake-evolution@5a077e5826f3875755486227e39f7b64cb2e50d3 # ratchet:miccy/snake-evolution@v1.2.4
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             images/snake.svg
           theme: github-light
       - name: Commit and push if it changed
-        uses: stefanzweifel/git-auto-commit-action@v7
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # ratchet:stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "🐍 Update snake animation"
           file_pattern: 'images/*.svg'

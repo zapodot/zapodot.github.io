@@ -1,0 +1,28 @@
+name: Generate Snake
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate_snake:
+    name: Generate Snake animation
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checks out repo
+        uses: actions/checkout@v6
+      - name: Generates snake animation for ${{ github.repository_owner }}
+        uses: miccy/snake-evolution@v1.2.4
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            images/snake.svg
+          theme: github-light
+      - name: Commit and push if it changed
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "🐍 Update snake animation"
+          file_pattern: 'images/*.svg'
+

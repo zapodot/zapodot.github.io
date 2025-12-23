@@ -429,3 +429,11 @@ Small Device Styles
   }
 
 }
+img.svg-logo {
+  width: 100px;
+  height: auto;
+  vertical-align: bottom;
+}
+div.badge-base, div.bluesky-badge {
+  width: 250px;
+}
